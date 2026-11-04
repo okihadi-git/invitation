@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2e7dc"/><stop offset="1" stop-color="#f4f6f0"/></linearGradient></defs>
+<rect width="300" height="400" fill="url(#g)"/>
+<path d="M50 340V170a100 100 0 0 1 200 0v170z" fill="#fff" fill-opacity=".6" stroke="#8f9e8b"/>
+<text x="150" y="150" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" letter-spacing="3" fill="#586855">THE WEDDING OF</text>
+<text x="150" y="200" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="600" fill="#2c3e35">Rani &amp; Bima</text>
+<text x="150" y="228" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="10" fill="#6b7a68">Sabtu, 14 Maret 2027</text>
+<rect x="105" y="252" width="90" height="26" rx="13" fill="#3b4d42"/>
+<text x="150" y="269" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" fill="#fff">Buka Undangan</text>
+</svg>

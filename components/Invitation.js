@@ -7,6 +7,7 @@ import { mergeData } from "@/lib/defaults";
 // Dimuat dinamis supaya CSS tiap template hanya masuk ke halaman yang memakainya.
 const VIEWS = {
   "toile-biru": dynamic(() => import("./templates/toile-biru/ToileBiru")),
+  "sage-minimalist": dynamic(() => import("./templates/sage-minimalist/SageMinimalist")),
 };
 
 export default function Invitation({ template, data, invitationId }) {

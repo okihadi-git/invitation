@@ -1,27 +1,18 @@
-// markup.js - Menyediakan struktur konten/section statis
-
-export const getTemplateMarkup = (data) => {
-  const { bride, groom, eventDate, location } = data || {};
-
-  return {
-    hero: {
-      subtitle: "THE WEDDING OF",
-      title: `${bride?.nickname || 'Mempelai'} & ${groom?.nickname || 'Mempelai'}`,
-      date: eventDate || "Minggu, 12 Desember 2026",
-    },
-    couple: {
-      title: "Mempelai",
-      brideName: bride?.fullName || "Nama Mempelai Wanita",
-      brideParents: `Putri dari Bpk. ${bride?.father || '-'} & Ibu ${bride?.mother || '-'}`,
-      groomName: groom?.fullName || "Nama Mempelai Pria",
-      groomParents: `Putra dari Bpk. ${groom?.father || '-'} & Ibu ${groom?.mother || '-'}`,
-    },
-    event: {
-      title: "Waktu & Tempat",
-      akadTitle: "Akad Nikah",
-      date: eventDate || "12 Desember 2026",
-      address: location?.address || "Lokasi Acara Belum Ditentukan",
-      mapsUrl: location?.mapsUrl || "#",
-    },
-  };
-};
+// Konten statis Sage Minimalist, disusun dari data undangan (format sama dengan Toile Biru).
+export const getTemplateMarkup = (D) => ({
+  hero: {
+    subtitle: "THE WEDDING OF",
+    title: `${D.a || "Mempelai"} & ${D.b || "Pasangan"}`,
+    date: D.date || "",
+  },
+  couple: {
+    title: "Mempelai",
+    brideName: D.fa || D.a,
+    brideParents: D.pa || "",
+    groomName: D.fb || D.b,
+    groomParents: D.pb || "",
+  },
+  events: (D.events || []).map((e) => ({ name: e.n, date: e.d, time: e.t, place: e.p })),
+  addr: D.addr || "",
+});
+export default getTemplateMarkup;
