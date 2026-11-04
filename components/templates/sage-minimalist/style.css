@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+.sage-template {
+  background-color: #f4f6f0;
+  color: #2c3e35;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+.sage-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #e2e7dc 0%, #f4f6f0 100%);
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.sage-hero.hide-cover {
+  display: none;
+}
+
+.sage-card {
+  border: 1px solid #8f9e8b;
+  padding: 3rem 2rem;
+  border-radius: 120px 120px 0 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  max-width: 400px;
+  width: 100%;
+}
+
+.sage-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: #586855;
+  margin-bottom: 1rem;
+}
+
+.sage-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #2c3e35;
+  margin: 1rem 0;
+}
+
+.sage-date {
+  font-size: 0.9rem;
+  color: #6b7a68;
+  margin-top: 1rem;
+}
+
+.sage-btn {
+  margin-top: 1.5rem;
+  background: #3b4d42;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.sage-btn:hover {
+  background: #2c3e35;
+}
+
+.sage-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.sage-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #3b4d42;
+  margin-bottom: 2rem;
+}
+
+.sage-couple-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sage-divider {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #8f9e8b;
+}
+
+.sage-event-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e7dc;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.sage-timer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.sage-timer div span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3b4d42;
+}
+
+.sage-timer div p {
+  font-size: 0.75rem;
+  color: #8f9e8b;
+  margin: 0;
+}
