@@ -63,11 +63,21 @@ $("op").onclick=()=>{$("cv").classList.add("open");document.body.classList.remov
  if(D.music){au.src=D.music;au.play().then(()=>setM(true)).catch(()=>setM(false))}};
 $("cv").ontransitionend=()=>{if($("cv").classList.contains("open"))$("cv").style.display="none"};
 
+// --- video YouTube: klik untuk memutar di tempat (bukan YouTube = buka tab baru) ---
+const ytId=(u=>{try{const x=new URL(u),h=x.hostname.replace(/^www\./,"");if(h==="youtu.be")return x.pathname.slice(1);
+ if(/^(m\.)?youtube(-nocookie)?\.com$/.test(h)){if(x.pathname==="/watch")return x.searchParams.get("v");const m=x.pathname.match(/^\/(embed|shorts|live)\/([\w-]{11})/);if(m)return m[2]}}catch{}return null})(D.video);
+const vl=$("vl");
+const onVl=e=>{if(!/^[\w-]{11}$/.test(ytId||""))return;e.preventDefault();if(on){au.pause();setM(false)}
+ const f=document.createElement("iframe");f.src=`https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&playsinline=1`;
+ f.title="Video undangan";f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;f.referrerPolicy="strict-origin-when-cross-origin";
+ f.style.cssText="position:absolute;left:8%;right:8%;top:50%;transform:translateY(-50%);width:84%;aspect-ratio:16/9;border:0;border-radius:8px;background:#000";vl.replaceWith(f)};
+vl.addEventListener("click",onVl);
+
 // --- muncul perlahan saat di-scroll ---
 let io=null;
 if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver"in window){
  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.08});
  $$(".wrap section>*,.tl>div").forEach(e=>{e.classList.add("rv");io.observe(e)})}
 
-return ()=>{clearInterval(tm);document.removeEventListener("click",onCp);io&&io.disconnect();document.body.classList.remove("lock");au.pause()}
+return ()=>{vl.removeEventListener("click",onVl);clearInterval(tm);document.removeEventListener("click",onCp);io&&io.disconnect();document.body.classList.remove("lock");au.pause()}
 }
