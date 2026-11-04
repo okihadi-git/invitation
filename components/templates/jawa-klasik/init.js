@@ -68,7 +68,7 @@ const ytId=(u=>{try{const x=new URL(u),h=x.hostname.replace(/^www\./,"");if(h===
  if(/^(m\.)?youtube(-nocookie)?\.com$/.test(h)){if(x.pathname==="/watch")return x.searchParams.get("v");const m=x.pathname.match(/^\/(embed|shorts|live)\/([\w-]{11})/);if(m)return m[2]}}catch{}return null})(D.video);
 const vl=$("vl");
 const onVl=e=>{if(!/^[\w-]{11}$/.test(ytId||""))return;e.preventDefault();if(on){au.pause();setM(false)}
- const f=document.createElement("iframe");f.src=`https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&playsinline=1`;
+ const f=document.createElement("iframe");f.src=<iframe width="560" height="315" src="https://www.youtube.com/embed/PWbSLgZWBhU?si=ebLlFkNDhwsYWdFJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>;
  f.title="Video undangan";f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;f.referrerPolicy="strict-origin-when-cross-origin";
  f.style.cssText="position:absolute;left:8%;right:8%;top:50%;transform:translateY(-50%);width:84%;aspect-ratio:16/9;border:0;border-radius:8px;background:#000";vl.replaceWith(f)};
 vl.addEventListener("click",onVl);
