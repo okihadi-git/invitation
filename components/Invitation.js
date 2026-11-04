@@ -9,6 +9,7 @@ const VIEWS = {
   "toile-biru": dynamic(() => import("./templates/toile-biru/ToileBiru")),
   "sage-minimalist": dynamic(() => import("./templates/sage-minimalist/SageMinimalist")),
   "jawa-klasik": dynamic(() => import("./templates/jawa-klasik/JawaKlasik")),
+  "terakota": dynamic(() => import("./templates/terakota/Terakota")),
 };
 
 export default function Invitation({ template, data, invitationId }) {
